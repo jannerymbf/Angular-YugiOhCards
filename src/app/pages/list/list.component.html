@@ -3,6 +3,6 @@
 
   <!-- Acá tiene que ir el despliegue de cartas, pero como es algo que se va a repetir es mejor tenerlo como un componente -->
   <div class="cards">
-    <app-card *ngFor="let card of [1,2,3,4,5,6]"></app-card>
+    <app-card *ngFor="let card of cards" [card]="card"></app-card>
   </div>
 </div>
