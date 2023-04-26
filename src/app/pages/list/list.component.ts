@@ -20,4 +20,8 @@ export class ListComponent implements OnInit {
     })
   }
 
+  onScroll() {
+    console.log("scrolled!!");
+  }
+
 }

@@ -1,4 +1,9 @@
-<div class="list">
+<div
+  class="list"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="100"
+  (scrolled)="onScroll()">
   <input class="form-control" type="text" placeholder="Buscar una carta">
 
   <!-- Acá tiene que ir el despliegue de cartas, pero como es algo que se va a repetir es mejor tenerlo como un componente -->
