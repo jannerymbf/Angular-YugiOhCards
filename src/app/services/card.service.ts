@@ -11,11 +11,11 @@ export class CardService {
 
   constructor(private http: HttpClient) { }
 
-  getCards() {
+  getCards(offset = 0) {
     // para que devuelva de 100 en 100
     const params = {
       num: 100,
-      offset: 100
+      offset
     }
     return this.http.get<Card[]>(this.API_URL, {params}).pipe(
       map((res: any) => {
