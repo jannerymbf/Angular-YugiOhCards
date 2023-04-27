@@ -26,4 +26,13 @@ export class CardService {
       })
     );
   }
+
+  getCard(id: string) {
+    const params = {
+      id
+    }
+    return this.http.get(this.API_URL, {params}).pipe(
+      map((res: any) => res.data[0])
+    )
+  }
 }
