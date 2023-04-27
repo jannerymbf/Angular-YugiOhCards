@@ -29,7 +29,7 @@
       <tbody>
         <tr *ngFor="let market of card.card_prices[0] | keyvalue">
           <!-- Keyvalue es un pipe que te ayuda a iterar objetos en el html -->
-          <th scope="row">{{ market.key }}</th>
+          <th scope="row">{{ market.key | marketName}}</th>
           <td>{{ market.value }}</td>
         </tr>
       </tbody>

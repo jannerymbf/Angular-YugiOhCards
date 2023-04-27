@@ -5,8 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MarketNamePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  markets = [
+    {id: 'amazon_price', name: 'Amazon'},
+    {id: 'cardmarket_price', name: 'Cardmarket'},
+    {id: 'coolstuffinc_price', name: 'Coolstuffinc'},
+    {id: 'ebay_price', name: 'Ebay'},
+    {id: 'tcgplayer_price', name: 'Tcgplayer'}
+  ]
+
+  transform(value: string): string {
+    const market = this.markets.find(m => m.id == value)
+    return market?.name || '';
   }
 
 }
