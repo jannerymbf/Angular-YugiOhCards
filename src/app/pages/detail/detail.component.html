@@ -1,16 +1,22 @@
-<div class="detail-card">
+<div class="detail-card" *ngIf="card$ | async as card">
+  <!-- 'card' es una variable que estamos creando para que se guarde la respuesta de nuestro observable -->
   <div class="top">
-    <img src="https://images.ygoprodeck.com/images/cards/23771716.jpg" alt="">
+    <img [src]="card.card_images[0].image_url" alt="">
   </div>
   <div class="bottom">
-    <h2>Nombre de la carta</h2>
+    <h2>{{ card.name }}</h2>
     <div class="item">
-      <p class="description">Descripción</p>
+      <p class="description">{{ card.desc }}</p>
     </div>
 
     <div class="item">
-      <h3 class="title">Título</h3>
-      <p class="description">Descripción</p>
+      <h3 class="title">Type</h3>
+      <p class="description">{{ card.type }}</p>
+    </div>
+
+    <div class="item">
+      <h3 class="title">Race</h3>
+      <p class="description">{{ card.race }}</p>
     </div>
 
     <table class="table">
